@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GPA Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <h1>🎓 GPA Tracker</h1>
+  <div class="cgpa-box">
+    CGPA: <span id="cgpa">0.00</span>
+  </div>
+</header>
+
+<section class="controls">
+  <select id="schemeSelect">
+    <option value="">Select Scheme</option>
+    <option value="RTU">RTU</option>
+    <option value="SKIT">SKIT</option>
+    <option value="POORNIMA">POORNIMA</option>
+    <option value="CUSTOM">CUSTOM</option>
+  </select>
+
+  <select id="semSelect">
+    <option value="">Select Semester</option>
+  </select>
+
+  <button onclick="loadData()">Load</button>
+</section>
+
+<section id="tableSection" class="table-section">
+  <table>
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Credits</th>
+        <th>Marks</th>
+        <th>Grade</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <div class="sgpa-box">
+    SGPA: <span id="sgpa">0.00</span>
+  </div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
