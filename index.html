@@ -7,10 +7,11 @@
 </head>
 
 <body>
-
 <header class="topbar">
   <h1>🎓 GPA Tracker</h1>
-  <div class="cgpa-box">
+
+  <!-- 🔥 CLICKABLE CGPA -->
+  <div class="cgpa-box" onclick="openCGPACalculator()">
     CGPA: <span id="cgpa">0.00</span>
   </div>
 </header>
@@ -31,6 +32,7 @@
   <button onclick="loadData()">Load</button>
 </section>
 
+<!-- 📊 MAIN TABLE -->
 <section id="tableSection" class="table-section">
   <table>
     <thead>
@@ -48,7 +50,26 @@
   <div class="sgpa-box">
     SGPA: <span id="sgpa">0.00</span>
   </div>
+
+  <!-- 📊 DASHBOARD -->
+  <section id="dashboard" class="dashboard"></section>
 </section>
+
+<!-- 🔥 CGPA CALCULATOR MODAL -->
+<div id="cgpaModal" class="modal hidden">
+  <div class="modal-box">
+    <h2>📊 CGPA Calculator</h2>
+
+    <p>Enter SGPA for each semester:</p>
+
+    <div id="sgpaInputs"></div>
+
+    <button onclick="calculateCGPAFromInput()">Calculate CGPA</button>
+    <button onclick="closeCGPACalculator()">Close</button>
+
+    <h3 id="cgpaResult"></h3>
+  </div>
+</div>
 
 <script src="app.js"></script>
 </body>
