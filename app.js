@@ -24,8 +24,18 @@ const schemes = {
 
   SKIT: {
     "Sem 1": [
-      { subject: "Maths", credits: 4 },
-      { subject: "Physics", credits: 3 }
+      { subject: "Engineering Mathematics-I ", credits: 4 },
+       { subject: "Engineering Physics/Engineering Chemistry ", credits: 4 },
+       { subject: "Communication Skills/Universal Human Values ", credits: 2 },
+       { subject: "Computational Thinking and Programming", credits: 2 },
+       { subject: "Basic Electrical & Electronics Engineering /Basic Mechanical Engineering/Basic Civil Engineering", credits: 2 },
+       { subject: "Engineering Physics Lab/ Engineering Chemistry Lab ", credits: 1 },
+      { subject: "Language Lab/ Universal Human Values Lab ", credits: 1 },
+        { subject: "C Programming Lab", credits: 1 },
+        { subject: "Basic Electrical & Electronics Engineering Lab/Basic Civil Engineering Lab/Manufacturing Practice Workshop ", credits: 3 },
+        { subject: "Computer Aided Engineering Graphics/Computer Aided Machine Drawing ", credits: 1 },
+       { subject: "Social Outreach, Discipline and Extra-Curricular Activities (SODECA) ", credits: 0.5 },
+       { subject: "Audit Course", credits: 0 }
     ],
     "Sem 1": [
       { subject: "Maths", credits: 4 },
