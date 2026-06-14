@@ -49,8 +49,9 @@
   <!-- CONTROLS -->
   <section class="controls">
 
+    <!-- COLLEGE -->
     <select id="schemeSelect">
-      <option value="">Select Scheme</option>
+      <option value="">Select College</option>
 
       <option value="RTU">RTU</option>
       <option value="SKIT">SKIT</option>
@@ -62,6 +63,12 @@
       </option>
     </select>
 
+    <!-- DEPARTMENT -->
+    <select id="branchSelect">
+      <option value="">Select Department</option>
+    </select>
+
+    <!-- SEMESTER -->
     <select id="semSelect">
       <option value="">Select Semester</option>
     </select>
@@ -72,7 +79,7 @@
 
   </section>
 
-  <!-- CUSTOM CONTROLS -->
+  <!-- CUSTOM CALCULATOR -->
   <section id="customControls" class="hidden">
 
     <div class="custom-header">
@@ -95,16 +102,23 @@
       <table>
 
         <thead>
+
           <tr>
 
-           <th>Subject</th>
-<th>Credits</th>
-<th>Marks</th>
-<th>Grade</th>
-<th>Points</th>
-<th>Action</th>
+            <th>Subject</th>
+
+            <th>Credits</th>
+
+            <th>Marks</th>
+
+            <th>Grade</th>
+
+            <th>Points</th>
+
+            <th>Action</th>
 
           </tr>
+
         </thead>
 
         <tbody id="tableBody"></tbody>
@@ -115,56 +129,37 @@
 
   </section>
 
-  <!-- SGPA RESULT -->
+  <!-- SGPA -->
   <section class="result-section">
 
     <div class="result-card">
 
-      <h2>
-        Semester GPA
-      </h2>
+      <h2>Semester GPA</h2>
 
-      <h1 id="sgpa">
-        0.00
-      </h1>
+      <h1 id="sgpa">0.00</h1>
 
     </div>
 
   </section>
 
-  <!-- ANALYTICS -->
-  <section id="analyticsSection">
 
-    <h2>
-      Academic Insights
-    </h2>
-
-    <div id="dashboardInsights">
-
-    </div>
-
-  </section>
 
   <!-- CGPA MODAL -->
   <div id="cgpaModal" class="modal hidden">
 
     <div class="modal-box">
 
-      <h2>
-        📊 CGPA Calculator
-      </h2>
+      <h2>📊 CGPA Calculator</h2>
 
       <p>
-        Enter semester SGPAs below
+        Enter SGPA of completed semesters
       </p>
 
       <div id="sgpaInputs">
 
         <div class="sgpa-row">
 
-          <label>
-            Semester 1
-          </label>
+          <label>Semester 1</label>
 
           <input
             type="number"
@@ -194,14 +189,13 @@
 
       </div>
 
-      <h2 id="cgpaResult">
-      </h2>
+      <h2 id="cgpaResult"></h2>
 
     </div>
 
   </div>
 
-  <!-- LOADING OVERLAY (future use) -->
+  <!-- LOADER -->
   <div id="loader" class="hidden">
     Loading...
   </div>
@@ -211,3 +205,6 @@
 </body>
 
 </html>
+
+
+
