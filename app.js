@@ -1,6 +1,7 @@
 const schemes = {
   RTU: {
-    "Sem 1": [
+    CSE: {
+       "Sem 1": [
       { subject: "Maths I", credits: 4 },
       { subject: "Physics", credits: 3 },
       { subject: "Maths I", credits: 4 },
@@ -8,96 +9,36 @@ const schemes = {
       { subject: "Maths I", credits: 4 },
       { subject: "Physics", credits: 3 }
     ],
-    "Sem 2": [
-      { subject: "Maths II", credits: 4 },
-      { subject: "Chemistry", credits: 3 }
-    ],
-     "Sem 3": [
-      { subject: "Maths II", credits: 4 },
-      { subject: "Chemistry", credits: 3 }
-    ],
-    "Sem 4": [
-      { subject: "Maths II", credits: 4 },
-      { subject: "Chemistry", credits: 3 }
-    ]
+      "Sem 2": [{subject: "Physics", credit:4}],
+      "Sem 3": [{subject: "OOPS", credit:4}],
+      "Sem 4": [{subject: "Chemistry", credit:4}]
+    },
+
+    AI: {
+      "Sem 1": [{subject: "Mathematics", credit:4}],
+      "Sem 2": [{subject: "Mathematics", credit:4}],
+      "Sem 3": [{subject: "Mathematics", credit:4}]
+    }
   },
 
   SKIT: {
-    "Sem 1": [
-      { subject: "Engineering Mathematics-I ", credits: 4 },
-       { subject: "Engineering Physics/Engineering Chemistry ", credits: 4 },
-       { subject: "Communication Skills/Universal Human Values ", credits: 2 },
-       { subject: "Computational Thinking and Programming", credits: 2 },
-       { subject: "Basic Electrical & Electronics Engineering /Basic Mechanical Engineering/Basic Civil Engineering", credits: 2 },
-       { subject: "Engineering Physics Lab/ Engineering Chemistry Lab ", credits: 1 },
-      { subject: "Language Lab/ Universal Human Values Lab ", credits: 1 },
-        { subject: "C Programming Lab", credits: 1 },
-        { subject: "Basic Electrical & Electronics Engineering Lab/Basic Civil Engineering Lab/Manufacturing Practice Workshop ", credits: 3 },
-        { subject: "Computer Aided Engineering Graphics/Computer Aided Machine Drawing ", credits: 1 },
-       { subject: "Social Outreach, Discipline and Extra-Curricular Activities (SODECA) ", credits: 0.5 },
-       { subject: "Audit Course", credits: 0 }
-    ],
-    "Sem 2": [
-      { subject: "Engineering Mathematics-II ", credits: 4 },
-       { subject: "Engineering Physics/Engineering Chemistry ", credits: 4 },
-        { subject: "Innovation & Entrepreneurship ", credits: 1},
-       { subject: "Communication Skills/Universal Human Values ", credits: 2 },
-       { subject: "Problem Solving using Object Oriented Paradigm", credits: 2 },
-       { subject: "Basic Electrical & Electronics Engineering /Basic Mechanical Engineering/Basic Civil Engineering", credits: 2 },
-       { subject: "Engineering Physics Lab/ Engineering Chemistry Lab ", credits: 1 },
-      { subject: "Language Lab/ Universal Human Values Lab ", credits: 1 },
-        { subject: "C Programming Lab", credits: 1 },
-        { subject: "Basic Electrical & Electronics Engineering Lab/Basic Civil Engineering Lab/Manufacturing Practice Workshop ", credits: 3 },
-        { subject: "Computer Aided Engineering Graphics/Computer Aided Machine Drawing ", credits: 1 },
-       { subject: "Social Outreach, Discipline and Extra-Curricular Activities (SODECA) ", credits: 0.5 },
-       { subject: "Audit Course", credits: 0 }
-    ],
-    "Sem 3": [
-      { subject: "Engineering Mathematics-II ", credits: 4 },
-       { subject: "Engineering Physics/Engineering Chemistry ", credits: 4 },
-        { subject: "Innovation & Entrepreneurship ", credits: 1},
-       { subject: "Communication Skills/Universal Human Values ", credits: 2 },
-       { subject: "Problem Solving using Object Oriented Paradigm", credits: 2 },
-       { subject: "Basic Electrical & Electronics Engineering /Basic Mechanical Engineering/Basic Civil Engineering", credits: 2 },
-       { subject: "Engineering Physics Lab/ Engineering Chemistry Lab ", credits: 1 },
-      { subject: "Language Lab/ Universal Human Values Lab ", credits: 1 },
-        { subject: "C Programming Lab", credits: 1 },
-        { subject: "Basic Electrical & Electronics Engineering Lab/Basic Civil Engineering Lab/Manufacturing Practice Workshop ", credits: 3 },
-        { subject: "Computer Aided Engineering Graphics/Computer Aided Machine Drawing ", credits: 1 },
-       { subject: "Social Outreach, Discipline and Extra-Curricular Activities (SODECA) ", credits: 0.5 },
-       { subject: "Audit Course", credits: 0 }
-    ],
-    "Sem 4": [
-      { subject: "Maths", credits: 4 },
-      { subject: "Physics", credits: 3 }
-    ]
+    CSE: {
+      "Sem 1": [{subject: "Mathematics", credit:4}],
+      "Sem 2": [{subject: "Mathematics", credit:4}]
+    }
   },
 
-  POORNIMA: {
-    "Sem 1": [
-      { subject: "Maths", credits: 4 },
-      { subject: "Programming", credits: 3 }
-    ],
-    "Sem 2": [
-      { subject: "Maths", credits: 4 },
-      { subject: "Physics", credits: 3 }
-    ],
-    "Sem 3": [
-      { subject: "Maths", credits: 4 },
-      { subject: "Physics", credits: 3 }
-    ],
-    "Sem 4": [
-      { subject: "Maths", credits: 4 },
-      { subject: "Physics", credits: 3 }
-    ]
-  }
+  POORNIMA: {},
+
+  LMNIT: {}
 };
+
 let currentData = [];
 let cgpaSemesterCount = 1;
 
 const semSelect = document.getElementById("semSelect");
 const schemeSelect = document.getElementById("schemeSelect");
-
+const branchSelect = document.getElementById("branchSelect");
 function getGrade(marks) {
 
   if (marks >= 90) return ["O", 10];
@@ -112,18 +53,22 @@ function getGrade(marks) {
 
 schemeSelect.addEventListener("change", () => {
 
+  const college = schemeSelect.value;
+
+  branchSelect.innerHTML =
+    `<option value="">Select Department</option>`;
+
   semSelect.innerHTML =
     `<option value="">Select Semester</option>`;
 
-  const selected = schemeSelect.value;
-
-  if (selected === "CUSTOM") {
+  if (college === "CUSTOM") {
 
     document
       .getElementById("customControls")
       .classList.remove("hidden");
 
-    semSelect.disabled = true;
+    branchSelect.style.display = "none";
+    semSelect.style.display = "none";
 
     return;
   }
@@ -132,18 +77,42 @@ schemeSelect.addEventListener("change", () => {
     .getElementById("customControls")
     .classList.add("hidden");
 
-  semSelect.disabled = false;
+  branchSelect.style.display = "block";
+  semSelect.style.display = "block";
 
-  const scheme = schemes[selected];
+  if (!schemes[college]) return;
 
-  if (scheme) {
+  Object.keys(schemes[college]).forEach(branch => {
 
-    Object.keys(scheme).forEach(sem => {
+    branchSelect.innerHTML += `
+      <option value="${branch}">
+        ${branch}
+      </option>
+    `;
+  });
 
-      semSelect.innerHTML +=
-        `<option value="${sem}">${sem}</option>`;
-    });
-  }
+});
+branchSelect.addEventListener("change", () => {
+
+  const college = schemeSelect.value;
+  const branch = branchSelect.value;
+
+  semSelect.innerHTML =
+    `<option value="">Select Semester</option>`;
+
+  if (!college || !branch) return;
+
+  Object.keys(
+    schemes[college][branch]
+  ).forEach(sem => {
+
+    semSelect.innerHTML += `
+      <option value="${sem}">
+        ${sem}
+      </option>
+    `;
+  });
+
 });
 function loadData() {
 
@@ -164,11 +133,16 @@ function loadData() {
     return;
   }
 
-  const sem = semSelect.value;
+  const branch = branchSelect.value;
+const sem = semSelect.value;
 
-  if (!sem) return;
+if (!branch || !sem) {
+  alert("Please select department and semester");
+  return;
+}
 
-  currentData = schemes[scheme][sem].map(item => ({
+currentData =
+  schemes[scheme][branch][sem].map(item => ({
     ...item,
     marks: 0,
     grade: "-",
