@@ -339,16 +339,13 @@ IOT: {
     ],
     "Sem 3": [
       { subject: "Managerial Economics and Financial Accounting / Technical Communication", credits:1 },
-      { subject: "Statistics and Probability Theory", credits: 3 },
-      { subject: "Data Structures and Algorithms", credits: 4 },
-      { subject: "Operating System ", credits: 3 },
-      { subject: "Software Engineering and Project Management", credits: 3 },
-      { subject: "Digital Electronics", credits: 3},
-      { subject: "Data Structures and Algorithms Lab", credits: 1.5 },
-      { subject: "Programming in Java Lab", credits: 1.5 },
-      { subject: "Software Engineering Lab ", credits: 1.5 },
-      { subject: "Digital Electronics Lab", credits: 1.5 },
-      { subject: "Industrial Training", credits: 1 },
+      { subject: "Advanced Engineering Mathematics-I", credits: 4 },
+      { subject: "Strength of Materials", credits: 4 },
+      { subject: "Surveying", credits: 2 },
+      { subject: "Building Materials and Construction", credits: 1},
+      { subject: "Engineering Geology", credits: 1.5},
+      { subject: "Surveying Lab", credits: 1 },
+      { subject: "Programming in Java Lab", credits: 1 },
       { subject: "Social Outreach, Discipline and Extra Curricular Activities", credits: 0.5 },
       { subject: "Audit Course", credits: 0 }
     ],
@@ -379,7 +376,6 @@ IOT: {
 
   POORNIMA: {},
 
-  LMNIT: {}
 };
 
 let currentData = [];
