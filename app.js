@@ -374,7 +374,12 @@ IOT: {
     }
   },
 
-  POORNIMA: {},
+  POORNIMA: {
+    CSE: {
+      "Sem 1": [{subject: "Mathematics", credit:4}],
+      "Sem 2": [{subject: "Mathematics", credit:4}]
+    }
+  },
 
 };
 
