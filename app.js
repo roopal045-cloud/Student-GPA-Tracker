@@ -369,7 +369,20 @@ IOT: {
 
   RTU: {
     CSE: {
-      "Sem 1": [{subject: "Mathematics", credit:4}],
+      "Sem 1": [
+      { subject: "Engineering Mathematics-I", credits: 4 },
+      { subject: "Engineering Physics/Engineering Chemistry ", credits: 4},
+      { subject: "Communication Skills/Universal Human Values", credits: 2},
+      { subject: "Computational Thinking and Programming", credits: 2},
+      { subject: "Basic Electrical & Electronics Engineering/Basic Civil Engineering/Basic Mechanical Engineering", credits: 2 },
+      { subject: "Engineering Physics Lab/ Engineering Chemistry Lab", credits: 1 },
+      { subject: "Language Lab/ Universal Human Values Lab", credits: 1 },
+      { subject: "C Programming Lab ", credits: 1 },
+      { subject: "Basic Electrical & Electronics Engineering Lab/Basic Civil Engineering Lab/Manufacturing Practice Workshop", credits: 1 },
+      { subject: "Computer Aided Engineering Graphics/Computer Aided Machine Drawing", credits: 1.5 },
+      { subject: "Social Outreach, Discipline and Extra-Curricular Activities (SODECA)", credits: 0.5},
+      { subject: "Audit Course", credits: 0 }
+    ],
       "Sem 2": [{subject: "Mathematics", credit:4}]
     }
   },
